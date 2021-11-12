@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.validation.Valid;
 import java.security.Principal;
+import java.time.LocalDateTime;
 
 @Controller
 public class HomeController {
@@ -26,6 +27,12 @@ public class HomeController {
 
     @RequestMapping("/")
     public String index(){
+        LocalDateTime startDate = LocalDateTime.of(2021,11, 9, 18,0);
+        LocalDateTime endDate = LocalDateTime.of(2021, 11, 25, 21,0);
+        System.out.println(startDate.compareTo(endDate));
+//        LocalDateTime ldt = LocalDateTime.now();
+//        LocalDateTime tomorrow = ldt.withDayOfMonth(13);
+//        System.out.println(ldt.compareTo(tomorrow));
         return "index";
     }
 
